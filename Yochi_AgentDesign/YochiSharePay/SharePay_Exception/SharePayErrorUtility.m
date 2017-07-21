@@ -19,8 +19,8 @@
 
 + (BOOL)invalidCharge:(NSDictionary*)chargeInfo withComplation:(SharePayComplationBlcok)complation
 {
-    if (!chargeInfo) {
-
+    if (!chargeInfo || chargeInfo.count == 0) {
+        
         complation(@"参数不能为空",[SharePayErrorUtility create:SharePay_ErrorParameterIsNil]);
         return NO;
     }

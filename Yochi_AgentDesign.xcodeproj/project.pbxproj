@@ -452,8 +452,8 @@
 				TargetAttributes = {
 					D2F35EB61F1EDACC00E8270B = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 229U5KUWGH;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = C7U5N4698Q;
+						ProvisioningStyle = Manual;
 					};
 					D2F35ECF1F1EDACD00E8270B = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -685,7 +685,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 229U5KUWGH;
+				DEVELOPMENT_TEAM = C7U5N4698Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Yochi_AgentDesign/TencentOpenAPI",
@@ -699,8 +699,15 @@
 					"$(PROJECT_DIR)/Yochi_AgentDesign/WeChatSDK",
 					"$(PROJECT_DIR)/Yochi_AgentDesign/libWeiboSDK",
 				);
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+					"-fobjc-arc",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Yochi.Yochi-AgentDesign";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "54cbad4b-ca5d-46fd-bec4-9bae7e94ffd4";
+				PROVISIONING_PROFILE_SPECIFIER = EcarayDebug;
 			};
 			name = Debug;
 		};
@@ -708,7 +715,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 229U5KUWGH;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Yochi_AgentDesign/TencentOpenAPI",
@@ -722,8 +729,14 @@
 					"$(PROJECT_DIR)/Yochi_AgentDesign/WeChatSDK",
 					"$(PROJECT_DIR)/Yochi_AgentDesign/libWeiboSDK",
 				);
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+					"-fobjc-arc",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Yochi.Yochi-AgentDesign";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

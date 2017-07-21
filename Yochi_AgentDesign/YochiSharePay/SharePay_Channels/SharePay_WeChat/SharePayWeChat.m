@@ -9,7 +9,10 @@
 #import "SharePayWeChat.h"
 #import "SharePayErrorUtility.h"
 #import "WXApi.h"
-#define WXAPPID @""
+
+#define WXAPPID @"wx71358ebc5153e6c5"
+#define WXAPPSecret @"aqwszxcderfv154278asdfjklgfeksyu"
+
 
 @interface SharePayWeChat ()<WXApiDelegate>
 
@@ -26,9 +29,13 @@
 
     if (self) {
 
-        //单独工程直接填入微信key
-        BOOL isSuccess  = [WXApi registerApp:WXAPPID];//[WXApi registerApp:WXAPPID withDescription:@"SharePay_weixin"];
-
+        //[WXApi registerApp:WXAPPID withDescription:@"SharePay_weixin"];
+        BOOL isSuccess  = [WXApi registerApp:WXAPPID];
+        
+        if (isSuccess) {
+            
+            NSLog(@"微信注册成功！");
+        }
 
         if (isSuccess) {
 
@@ -104,8 +111,12 @@
 - (void)payWithCharge:(NSDictionary*)chargeInfo controller:(UIViewController*)controller scheme:(NSString*)scheme withComplation:(SharePayComplationBlcok)complation
 {
     if (!([WXApi isWXAppInstalled] && [WXApi isWXAppSupportApi])) {
-
-        complation(nil,[SharePayErrorUtility create:SharePay_ErrorAPPNotInstalled]);
+        
+        if (complation) {
+            
+            complation(@"您未安装微信或当前版本不支持",[SharePayErrorUtility create:SharePay_ErrorAPPNotInstalled]);
+        }
+        
         return;
     }
 
@@ -135,27 +146,27 @@
 
 /** 微信回调 回调 */
 - (void)onResp:(BaseResp*)resp {
-
+    
     /** 支付回调 */
     if ([resp isKindOfClass:[PayResp class]]){
         PayResp*response=(PayResp*)resp;
         switch(response.errCode){
             case WXSuccess:
-
+                
                 if (_complation) {
                     _complation(@"支付成功",nil);
                 }
-
+                
                 break;
             case WXErrCodeCommon:
-
+                
                 if (_complation) {
                     _complation(nil,[SharePayErrorUtility create:SharePay_Errorfailure]);
                 }
-
+                
                 break;
             case WXErrCodeUserCancel:
-
+                
                 if (_complation) {
                     _complation(nil,[SharePayErrorUtility create:SharePay_ErrorCancelled]);
                 }
@@ -164,30 +175,30 @@
                 if (_complation) {
                     _complation(nil,[SharePayErrorUtility create:SharePay_Errorfailure]);
                 }
-
+                
                 break;
         }
     }
-
+    
     /** 分享回调 */
     if([resp isKindOfClass:[SendMessageToWXResp class]]) {
         SendMessageToWXResp *sendResp = (SendMessageToWXResp *)resp;
-
+        
         if (sendResp.errCode == WXSuccess) {
-
+            
             if (_complation) {
                 _complation(@"分享成功", nil);
             }
-
+            
         }else if (sendResp.errCode == WXErrCodeUserCancel) {
-
+            
             if (_complation) {
-
+                
                 _complation(nil,[SharePayErrorUtility create:SharePay_ErrorCancelled]);
             }
-
+            
         }else {
-
+            
             if (_complation) {
                 _complation(nil,[SharePayErrorUtility create:SharePay_Errorfailure]);
             }
@@ -198,18 +209,28 @@
         
         SendAuthResp *sendResp = (SendAuthResp *)resp;
         /** 获取token */
-        NSString *tokenURL = [NSString stringWithFormat:@"https://api.weixin.qq.com/sns/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code",@"填appid", @"填secret", sendResp.code];
+        NSString *tokenURL = [NSString stringWithFormat:@"https://api.weixin.qq.com/sns/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code",WXAPPID, WXAPPSecret, sendResp.code];
         
-         /** 刷新token */
+        NSLog(@"sendResp.code : %@ %@", sendResp.code, tokenURL);
+        
+        /** 刷新token */
         //NSString *refreshTokenURL = [NSString stringWithFormat:@"https://api.weixin.qq.com/sns/oauth2/refresh_token?appid=%@&grant_type=refresh_token&refresh_token=%@",@"填appid", @"填获取到的refresh_token"];
         
         NSURLSession *session = [NSURLSession sharedSession];
         [session dataTaskWithURL:[NSURL URLWithString:tokenURL] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-           
+            
             NSError *errorInfo;
             id object = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&errorInfo];
             
             NSLog(@"object : %@ errorInfo : %@", object, errorInfo);
+            
+            if (!error) {
+                
+                if (_complation) {
+                    
+                    _complation(@"操作成功", [SharePayErrorUtility create:SharePay_Success]);
+                }
+            }
             
         }];
     }

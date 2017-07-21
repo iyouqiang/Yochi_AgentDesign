@@ -62,20 +62,20 @@
             case 6001:
             {
                 /** 取消支付 */
-                complation(nil,[SharePayErrorUtility create:SharePay_ErrorCancelled]);
+                complation(@"取消支付",[SharePayErrorUtility create:SharePay_ErrorCancelled]);
             }
                 break;
             case 8000:
             {
                 /** 正在处理 */
-                complation(nil,[SharePayErrorUtility create:SharePay_ErrorProcessed]);
+                complation(@"正在处理",[SharePayErrorUtility create:SharePay_ErrorProcessed]);
             }
                 break;
 
             default:
 
                 /** 支付失败 */
-                complation(nil,[SharePayErrorUtility create:SharePay_Errorfailure]);
+                complation(@"支付失败",[SharePayErrorUtility create:SharePay_Errorfailure]);
 
                 break;
         }
