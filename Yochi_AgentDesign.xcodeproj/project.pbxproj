@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D21623B11F248DA300368B92 /* SnailFullView.m in Sources */ = {isa = PBXBuildFile; fileRef = D21623A61F248DA300368B92 /* SnailFullView.m */; };
+		D21623B21F248DA300368B92 /* SnailIconLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D21623A81F248DA300368B92 /* SnailIconLabel.m */; };
+		D21623B31F248DA300368B92 /* SnailPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = D21623AA1F248DA300368B92 /* SnailPopupController.m */; };
+		D21623B41F248DA300368B92 /* UIColor+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = D21623AC1F248DA300368B92 /* UIColor+Extend.m */; };
+		D21623B51F248DA300368B92 /* UIScreen+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = D21623AE1F248DA300368B92 /* UIScreen+Extend.m */; };
+		D21623B61F248DA300368B92 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = D21623B01F248DA300368B92 /* UIView+Layout.m */; };
 		D2F35EBC1F1EDACC00E8270B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F35EBB1F1EDACC00E8270B /* main.m */; };
 		D2F35EBF1F1EDACC00E8270B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F35EBE1F1EDACC00E8270B /* AppDelegate.m */; };
 		D2F35EC21F1EDACC00E8270B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F35EC11F1EDACC00E8270B /* ViewController.m */; };
@@ -63,6 +69,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D21623A51F248DA300368B92 /* SnailFullView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnailFullView.h; sourceTree = "<group>"; };
+		D21623A61F248DA300368B92 /* SnailFullView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnailFullView.m; sourceTree = "<group>"; };
+		D21623A71F248DA300368B92 /* SnailIconLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnailIconLabel.h; sourceTree = "<group>"; };
+		D21623A81F248DA300368B92 /* SnailIconLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnailIconLabel.m; sourceTree = "<group>"; };
+		D21623A91F248DA300368B92 /* SnailPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnailPopupController.h; sourceTree = "<group>"; };
+		D21623AA1F248DA300368B92 /* SnailPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnailPopupController.m; sourceTree = "<group>"; };
+		D21623AB1F248DA300368B92 /* UIColor+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extend.h"; sourceTree = "<group>"; };
+		D21623AC1F248DA300368B92 /* UIColor+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extend.m"; sourceTree = "<group>"; };
+		D21623AD1F248DA300368B92 /* UIScreen+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+Extend.h"; sourceTree = "<group>"; };
+		D21623AE1F248DA300368B92 /* UIScreen+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+Extend.m"; sourceTree = "<group>"; };
+		D21623AF1F248DA300368B92 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		D21623B01F248DA300368B92 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
 		D2F35EB71F1EDACC00E8270B /* Yochi_AgentDesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yochi_AgentDesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F35EBB1F1EDACC00E8270B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D2F35EBD1F1EDACC00E8270B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -167,6 +185,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D21623A41F248D2D00368B92 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D21623A51F248DA300368B92 /* SnailFullView.h */,
+				D21623A61F248DA300368B92 /* SnailFullView.m */,
+				D21623A71F248DA300368B92 /* SnailIconLabel.h */,
+				D21623A81F248DA300368B92 /* SnailIconLabel.m */,
+				D21623A91F248DA300368B92 /* SnailPopupController.h */,
+				D21623AA1F248DA300368B92 /* SnailPopupController.m */,
+				D21623AB1F248DA300368B92 /* UIColor+Extend.h */,
+				D21623AC1F248DA300368B92 /* UIColor+Extend.m */,
+				D21623AD1F248DA300368B92 /* UIScreen+Extend.h */,
+				D21623AE1F248DA300368B92 /* UIScreen+Extend.m */,
+				D21623AF1F248DA300368B92 /* UIView+Layout.h */,
+				D21623B01F248DA300368B92 /* UIView+Layout.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		D2F35EAE1F1EDACC00E8270B = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +228,7 @@
 		D2F35EB91F1EDACC00E8270B /* Yochi_AgentDesign */ = {
 			isa = PBXGroup;
 			children = (
+				D21623A41F248D2D00368B92 /* Utilities */,
 				D2F35F2E1F1EDEE100E8270B /* libWeiboSDK */,
 				D2F35F291F1EDE5F00E8270B /* TencentOpenAPI */,
 				D2F35F211F1EDDE900E8270B /* AlipaySDK */,
@@ -524,17 +562,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21623B51F248DA300368B92 /* UIScreen+Extend.m in Sources */,
 				D2F35F131F1EDB0100E8270B /* SharePayErrorUtility.m in Sources */,
+				D21623B11F248DA300368B92 /* SnailFullView.m in Sources */,
 				D2F35F0C1F1EDB0100E8270B /* SharePayCopy.m in Sources */,
 				D2F35F0B1F1EDB0100E8270B /* SharePayAliPay.m in Sources */,
 				D2F35F0F1F1EDB0100E8270B /* SharePayTencent.m in Sources */,
 				D2F35F0E1F1EDB0100E8270B /* SharePaySina.m in Sources */,
+				D21623B21F248DA300368B92 /* SnailIconLabel.m in Sources */,
 				D2F35F101F1EDB0100E8270B /* SharePayWeChat.m in Sources */,
 				D2F35EC21F1EDACC00E8270B /* ViewController.m in Sources */,
 				D2F35F111F1EDB0100E8270B /* SharePayContext.m in Sources */,
 				D2F35EBF1F1EDACC00E8270B /* AppDelegate.m in Sources */,
 				D2F35EBC1F1EDACC00E8270B /* main.m in Sources */,
+				D21623B61F248DA300368B92 /* UIView+Layout.m in Sources */,
+				D21623B31F248DA300368B92 /* SnailPopupController.m in Sources */,
 				D2F35F121F1EDB0100E8270B /* SharePayError.m in Sources */,
+				D21623B41F248DA300368B92 /* UIColor+Extend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
